@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: rps-x-bot
+    env: node
+    plan: free   # change to starter, standard, etc. if you want 24/7 uptime
+    branch: main
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: TWITTER_APP_KEY
+        sync: false
+      - key: TWITTER_APP_SECRET
+        sync: false
+      - key: TWITTER_ACCESS_TOKEN
+        sync: false
+      - key: TWITTER_ACCESS_SECRET
+        sync: false
+      - key: TWITTER_BEARER_TOKEN
+        sync: false
+      - key: BOT_USER_ID
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT_JSON
+        sync: false
+      - key: POLL_INTERVAL_MS
+        value: "30000"
